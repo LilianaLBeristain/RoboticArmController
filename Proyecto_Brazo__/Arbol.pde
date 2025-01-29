@@ -22,9 +22,9 @@ class Tree {
     private int weight;
     
     /* Constructor */
-    public Tree ( int method, int pM, Random random ) {
+    public Tree ( int method, int size, Random random ) {
         this.random = random;
-        createTree (method, pM);
+        createTree (method, size);
         calculateHeight (root, 0, 0);
         calculateWeight (root);
     }
@@ -104,20 +104,20 @@ class Tree {
     /* 
      * Creates the tree according to the method selected by the user
      */
-    private void createTree ( int method, int pM ) {
+    private void createTree ( int method, int size ) {
         //System.out.println("Método: " + method);
         switch ( method ) {
             case 0:
                 //FullMethod
-                this.root = FullMethod(null, pM);
+                this.root = FullMethod(null, size);
                 break;
             case 1:
                 //GrowMethod
-                this.root = GrowMethod(null, pM);
+                this.root = GrowMethod(null, size);
                 break;
             case 2:
                 //M-ario Method
-                this.root = MarioMethod(null, pM);
+                this.root = MarioMethod(null, size);
                 break;
         }
     }
